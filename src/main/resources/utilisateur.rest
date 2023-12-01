@@ -1,0 +1,50 @@
+###
+
+POST http://localhost:9191/api/inscription
+Content-Type: application/json
+
+{
+  "nom":"Joel",
+  "email":"joeltchoufa@yahoo.fr",
+  "mdp":"password1"
+}
+
+###
+POST http://localhost:9191/api/activation
+Content-Type: application/json
+
+{
+  "code":"878742"
+}
+
+###
+// Utilisateur
+POST http://localhost:9191/api/connexion
+Content-Type: application/json
+
+{
+  "username":"joeltchoufa@yahoo.fr",
+  "password":"password1"
+}
+
+###
+// Login Admin
+POST http://localhost:9191/api/connexion
+Content-Type: application/json
+
+{
+  "username":"ericfonk@yahoo.fr",
+  "password":"admin"
+}
+
+###
+// Login Managerr
+POST http://localhost:9191/api/connexion
+Content-Type: application/json
+
+{
+  "username":"manager@yahoo.fr",
+  "password":"manager"
+}
+
+###

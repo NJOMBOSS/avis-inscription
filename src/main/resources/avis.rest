@@ -1,0 +1,30 @@
+###
+POST http://localhost:9191/api/avis
+Content-Type: application/json
+Authorization: Bearer eyJhbGciOiJIUzI1NiJ9.eyJub20iOiJKb2VsIiwic3ViIjoiam9lbHRjaG91ZmFAeWFob28uZnIiLCJleHAiOjE3MDExODY0Mjd9.nkaD9qAUzUOy-1rLb3BXuudVGk-iuio6pOOQvQpIlIM
+
+{
+  "message": "Belle formation Spring Security",
+  "statut":"Validée avec succèss"
+}
+
+###
+// En tant que Utilisateur
+GET http://localhost:9191/api/avis
+Content-Type: application/json
+Authorization: Bearer eyJhbGciOiJIUzI1NiJ9.eyJleHAiOjE3MDExODcwODUsIm5vbSI6IkpvZWwiLCJzdWIiOiJqb2VsdGNob3VmYUB5YWhvby5mciJ9.Zhgw8XHvfMqFf7Mnu5AmATACiTpQVsZE9En7yuLQuQg
+
+
+###
+// En tant que Administrateur
+GET http://localhost:9191/api/utilisateur
+Content-Type: application/json
+Authorization: BearereyJhbGciOiJIUzI1NiJ9.eyJzdWIiOiJlcmljZm9ua0B5YWhvby5mciIsImV4cCI6MTcwMTQyODE0Miwibm9tIjoiYWRtaW4ifQ.FBLb4Nf07ZbaSEfipQN2NrmZQ2t3GXaixp1wlCJSj6Y
+
+###
+// En tant que Manager
+GET http://localhost:9191/api/utilisateur
+Content-Type: application/json
+Authorization: Bearer eyJhbGciOiJIUzI1NiJ9.eyJzdWIiOiJtYW5hZ2VyQHlhaG9vLmZyIiwiZXhwIjoxNzAxNDI4NTM3LCJub20iOiJtYW5hZ2VyIn0.lGsvV0_qApZdTOxunbD0Lpcr7nPsAhoDdjf4W5mgxKY
+
+###

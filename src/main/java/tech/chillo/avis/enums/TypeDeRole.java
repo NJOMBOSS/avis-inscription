@@ -1,11 +1,16 @@
-package tech.chillo.avis;
+package tech.chillo.avis.enums;
 
 import lombok.AllArgsConstructor;
 import lombok.Getter;
+import org.springframework.security.core.GrantedAuthority;
+import org.springframework.security.core.authority.SimpleGrantedAuthority;
 
+import java.util.Collection;
+import java.util.List;
 import java.util.Set;
+import java.util.stream.Collectors;
 
-import static tech.chillo.avis.TypePermission.*;
+import static tech.chillo.avis.enums.TypePermission.*;
 @Getter
 @AllArgsConstructor
 public enum TypeDeRole {
@@ -17,8 +22,7 @@ public enum TypeDeRole {
             MANAGER_CREATE,
             MANAGER_READ,
             MANAGER_UPDATE,
-            MANAGER_DELETE_AVIS
-    )
+            MANAGER_DELETE_AVIS)
     ),
     ADMINISTRATEUR(
             Set.of(
@@ -30,10 +34,18 @@ public enum TypeDeRole {
                     MANAGER_CREATE,
                     MANAGER_READ,
                     MANAGER_UPDATE,
-                    MANAGER_DELETE_AVIS
-            )
+                    MANAGER_DELETE_AVIS)
     );
 
 
     final Set<TypePermission> permissions;
+
+    public Collection<? extends GrantedAuthority> getAuthorities() {
+      final List<SimpleGrantedAuthority> grantedAuthorities = this.getPermissions().stream().map(
+                permission -> new SimpleGrantedAuthority(permission.name())
+        ).collect(Collectors.toList());
+
+        grantedAuthorities.add(new SimpleGrantedAuthority("ROLE_ " + this.name()));
+                return grantedAuthorities;
+    }
 }

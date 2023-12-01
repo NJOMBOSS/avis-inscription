@@ -21,7 +21,7 @@ import java.util.Map;
 @AllArgsConstructor
 @RestController
 @RequestMapping(consumes = MediaType.APPLICATION_JSON_VALUE)
-public class UtilisateurControleur {
+public class CompteControleur {
 
     private AuthenticationManager authenticationManager;
     private UtilisateurService utilisateurService;

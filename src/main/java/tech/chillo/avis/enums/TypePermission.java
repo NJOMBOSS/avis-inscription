@@ -1,4 +1,4 @@
-package tech.chillo.avis;
+package tech.chillo.avis.enums;
 
 import lombok.Getter;
 import lombok.RequiredArgsConstructor;
@@ -20,5 +20,5 @@ public enum TypePermission {
     UTILISATEUR_CREATE_AVIS;
 
 
-    private String permission;
+    private String libelle;
 }
